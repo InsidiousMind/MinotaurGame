@@ -40,8 +40,6 @@ void *Object_new(size_t size, Object proto, char *description){
   if(!proto.attack) proto.attack = Object_attack;
   if(!proto.move) proto.move = Object_move;
   
-  //this seems weird, but we can make a struct of one size,
-  //then point a different pointer at it to "cast" it
   Object *el = calloc(1, size);
   *el = proto;
 
